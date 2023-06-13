@@ -34,16 +34,11 @@ for (let combinacao of combinacoesDeOito) {
 // grupos de 4
 for (let combinacao of combinacoesDeQuatro) {
     const combinou = combinacao.every(elemento => tabelaVerdade.includes(elemento))
-    const jaTemTodos = combinacao.every(elemento => {
-        agrupamentos.forEach(agrupamento => {
-            if (agrupamento.includes(elemento)) {
-
-            }
-        })
+    const jaTem = combinacao.every(elemento => {
+        return agrupamentos.some(subArray => subArray.includes(elemento))
     })
-    
 
-    if (combinou) {
+    if (combinou && !jaTem) {
         agrupamentos.push(combinacao)
         if (numeroDeVariaveis === 2) {
             break
@@ -52,10 +47,28 @@ for (let combinacao of combinacoesDeQuatro) {
 }
 
 // grupos de 2
-for (let combinacao of combinacoesdeDois) {}
+for (let combinacao of combinacoesdeDois) {
+    const combinou = combinacao.every(elemento => tabelaVerdade.includes(elemento))
+    const jaTem = combinacao.every(elemento => {
+        return agrupamentos.some(subArray => subArray.includes(elemento))
+    })
+
+    if (combinou && !jaTem) {
+        agrupamentos.push(combinacao)
+    }
+}
 
 // grupos de 1
-for (let combinacao of combinacoesdeUm) {}
+for (let combinacao of combinacoesdeUm) {
+    const combinou = combinacao.every(elemento => tabelaVerdade.includes(elemento))
+    const jaTem = combinacao.every(elemento => {
+        return agrupamentos.some(subArray => subArray.includes(elemento))
+    })
+
+    if (combinou && !jaTem) {
+        agrupamentos.push(combinacao)
+    }
+}
 
 console.log(agrupamentos)
 
