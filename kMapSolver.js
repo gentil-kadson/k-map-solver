@@ -72,3 +72,5 @@ for (let combinacao of combinacoesdeUm) {
 
 console.log(agrupamentos)
 
+// Pegando as mudanças
+
