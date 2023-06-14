@@ -1,19 +1,19 @@
 const variablesObject2Variables = {
     "1": "~A ~B",
     "2": "~A B",
-    "3": "A ~B",
-    "4": "A B"
+    "3": "A B",
+    "4": "A ~B",
 }
 
 const variablesObject3Variables = {
     "1": "~A ~B ~C",
     "2": "~A ~B C",
-    "3": "~A B ~C",
-    "4": "~A B C",
+    "3": "~A B C",
+    "4": "~A B ~C",
     "5": "A B ~C",
     "6": "A B C",
-    "7": "A ~B ~C",
-    "8": "A ~B C",
+    "7": "A ~B C",
+    "8": "A ~B ~C",
 }
 
 
