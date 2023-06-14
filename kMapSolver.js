@@ -74,6 +74,12 @@ for (let combinacao of combinacoesdeUm) {
 console.log(agrupamentos)
 
 // Pegando as mudanças
-const expressaoSimplificada = convertNumberToVariable(agrupamentos)
+const expressaoSimplificada = convertNumberToVariable(agrupamentos, numeroDeVariaveis)
 
-console.log(expressaoSimplificada)
+console.log("A expressão simplificada é:")
+let expressaoEmString = ''
+expressaoSimplificada.forEach((expressao, index) => {
+     expressaoEmString += index === expressaoSimplificada.length - 1 ? expressao.join("") : expressao.join("") +" + "
+})
+
+console.log(expressaoEmString)

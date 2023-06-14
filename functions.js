@@ -5,19 +5,35 @@ const variablesObject2Variables = {
     "4": "A B"
 }
 
+const variablesObject3Variables = {
+    "1": "~A ~B ~C",
+    "2": "~A ~B C",
+    "3": "~A B ~C",
+    "4": "~A B C",
+    "5": "A B ~C",
+    "6": "A B C",
+    "7": "A ~B ~C",
+    "8": "A ~B C",
+}
 
-function convertNumberToVariable(agrupamentos) {
+
+function convertNumberToVariable(agrupamentos, numeroDeVariaveis) {
     let agrupamentosDeVariaveis = ''
+    const expressoesSimplificadas = []
+    const objetoASerComparado = numeroDeVariaveis === 2 ? variablesObject2Variables : variablesObject3Variables
+
 
     agrupamentos.forEach((agrupamento, index) => {
-        for (let key in variablesObject2Variables) {
+        for (let key in objetoASerComparado) {
             if (agrupamento.includes(Number(key))) {
-                agrupamentosDeVariaveis += variablesObject2Variables[key] + " "
+                agrupamentosDeVariaveis += objetoASerComparado[key] + " "
             }
         }
+        expressoesSimplificadas.push(simplificarExpressao(agrupamentosDeVariaveis))
+        agrupamentosDeVariaveis = ''
     })
 
-    return simplificarExpressao(agrupamentosDeVariaveis)
+    return expressoesSimplificadas
 }
 
 function simplificarExpressao(agrupamentosDeVariaveis) {
