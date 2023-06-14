@@ -1,4 +1,5 @@
 const prompt = require('prompt-sync')()
+const convertNumberToVariable = require('./functions')
 
 // SETS DE COMBINAÇÕES POSSÍVEIS
 const combinacoesdeUm = [[1], [2], [3], [4], [5], [6], [7], [8]]
@@ -73,4 +74,6 @@ for (let combinacao of combinacoesdeUm) {
 console.log(agrupamentos)
 
 // Pegando as mudanças
+const expressaoSimplificada = convertNumberToVariable(agrupamentos)
 
+console.log(expressaoSimplificada)
