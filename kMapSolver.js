@@ -92,4 +92,8 @@ expressaoSimplificada.forEach((expressao, index) => {
      expressaoEmString += index === expressaoSimplificada.length - 1 ? expressao.join("") : expressao.join("") +" + "
 })
 
-console.log(expressaoEmString)
+if (expressaoEmString.length === 0) {
+    console.log("0")
+} else {
+    console.log(expressaoEmString)
+}
