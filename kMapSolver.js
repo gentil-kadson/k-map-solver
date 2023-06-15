@@ -51,9 +51,6 @@ for (let combinacao of combinacoesDeQuatro) {
 
     if (combinou && !jaTem) {
         agrupamentos.push(combinacao)
-        if (numeroDeVariaveis === 2) {
-            break
-        }
     }
 }
 
@@ -93,7 +90,11 @@ expressaoSimplificada.forEach((expressao, index) => {
 })
 
 if (expressaoEmString.length === 0) {
-    console.log("0")
+    if (tabelaVerdade.every(valor => valor === 0)) {
+        console.log("0")
+    } else if (tabelaVerdade.every(valor => valor === 1)) {
+        console.log("1")
+    }
 } else {
     console.log(expressaoEmString)
 }
